@@ -12,18 +12,25 @@
   src: url("./fonts/Shrikhand-Regular.ttf") format("truetype");
 }
 /* variables */
+/* Mixin */
+/*body*/
 body {
   box-sizing: border-box;
+  font-family: "robotoregular";
 }
 body a:visited {
   color: black;
 }
+body a {
+  text-decoration: none;
+}
 
+/*header*/
 header {
   display: flex;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid lightgray;
-  box-shadow: 0 1px 4px lightgrey;
 }
 header img {
   padding: 15px 15px 15px 25px;
@@ -37,8 +44,63 @@ header .__back {
 }
 
 #header__main {
+  justify-content: center;
+}
+
+/*Sections*/
+.top-section .__location {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #EFEFEF;
+  font-weight: bold;
+  font-size: 1.5em;
+  box-shadow: 0 1px 3px lightgray inset;
+}
+.top-section .__location .fa {
+  padding: 15px;
+}
+.top-section .__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 15px 15px 15px 15px;
+  background-color: whitesmoke;
+}
+.top-section .__description h1 {
+  font-size: large;
+}
+.top-section .__description > p {
+  margin: 0 0 15px 0;
+  font-size: medium;
+  color: dimgray;
+}
+.top-section .__description .__button {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border-radius: 60px 60px 60px 60px;
+  padding: 0 20px 0px 20px;
+  margin: 20px 0 30px 0;
+}
+.top-section .__description .__button a {
+  color: white;
+}
+
+aside h3 {
+  margin-left: 15px;
+}
+aside .__step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #9356DC;
+  border: 1px solid #9356DC;
+  border-radius: 50px 50px 50px 50px;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

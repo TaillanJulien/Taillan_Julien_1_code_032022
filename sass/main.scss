@@ -22,26 +22,44 @@ $primary_color:#9356DC;
 $secondary_color:#FF79DA;
 $tertiary_color:#99E2D0;
 
+/* Mixin */
 
+@mixin display_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
-
-
-
-
-
-body{
-    box-sizing: border-box;
-    & a:visited{
-        color: black;
+@mixin button{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom right, $secondary_color, $primary_color);
+    border-radius: 60px 60px 60px 60px;
+    padding: 0 20px 0px 20px;
+    margin: 20px 0 30px 0;
+    a{
+        color: white;
     }
 }
 
+/*body*/
+
+body{
+    box-sizing: border-box;
+    font-family: 'robotoregular';
+    & a:visited{
+        color: black;
+    }
+    & a{
+        text-decoration: none;
+    }
+}
+
+/*header*/
+
 header{
-    display: flex;
-    align-items: center;
+    @include display_center;
     border-bottom: 1px solid lightgray;
-    box-shadow: 0 1px 4px lightgrey;
     & img{
         padding: 15px 15px 15px 25px;
         }
@@ -55,7 +73,52 @@ header{
     }
 
 #header__main{
-    display: flex;
     justify-content: center;
 }
 
+/*Sections*/
+
+.top-section{
+    & .__location{
+        @include display_center;
+        background-color: #EFEFEF;
+        font-weight: bold;
+        font-size: 1.5em;
+        box-shadow: 0 1px 3px lightgray inset;
+        & .fa{
+            padding: 15px;
+        }
+    }
+    & .__description{
+        @include display_center;
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 15px 15px 15px;
+        background-color: whitesmoke;
+        & h1{
+            font-size: large;
+        }
+        & > p{
+            margin: 0 0 15px 0;
+            font-size: medium;
+            color: dimgray;
+        }
+        & .__button{
+            @include button;
+        }
+    }
+}
+
+aside{
+    & h3{
+        margin-left: 15px;
+    }
+    & .__step{
+        @include display_center;
+        color: white;
+        background-color: $primary_color;
+        border: 1px solid $primary_color;
+        border-radius: 50px 50px 50px 50px;
+        padding: 10px;
+    }
+}

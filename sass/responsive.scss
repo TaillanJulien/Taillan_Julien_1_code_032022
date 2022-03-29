@@ -7,17 +7,30 @@
             width: 25%;
         }
     }
+
+    .top-section{
+        & .__location{
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+    }
 }
 
 @media (max-width: 768px){
     header{ 
         & img{
         width: 50%;
-        padding: 15px 15px 15px 0;
         }
         & .fa{
             padding: 15px 0 15px 15px;
             font-size: 15px;
+        }
+    }
+
+    .top-section{
+        & .__location{
+            font-weight: 500;
+            font-size: 1em;
         }
     }
 }
