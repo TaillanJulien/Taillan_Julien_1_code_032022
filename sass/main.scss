@@ -1,11 +1,11 @@
 /* Polices */
 @font-face {
-    font-family: 'robotoregular';
-    src: url('./fonts/Roboto-Regular-webfont.eot');
-    src: url('./fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/Roboto-Regular-webfont.woff') format('woff'),
-         url('./fonts/Roboto-Regular-webfont.ttf') format('truetype'),
-         url('./fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-family: 'roboto';
+    src: url('./fonts/Roboto-Bold-webfont.eot');
+    src: url('./fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('./fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('./fonts/Roboto-Bold-webfont.svg#robotoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,7 +34,7 @@ $tertiary_color:#99E2D0;
     display: flex;
     justify-content: center;
     background: linear-gradient(to bottom right, $secondary_color, $primary_color);
-    border-radius: 60px 60px 60px 60px;
+    border-radius: 60px;
     padding: 0 20px 0px 20px;
     margin: 20px 0 30px 0;
     a{
@@ -46,7 +46,7 @@ $tertiary_color:#99E2D0;
 
 body{
     box-sizing: border-box;
-    font-family: 'robotoregular';
+    font-family: 'roboto';
     & a:visited{
         color: black;
     }
@@ -93,7 +93,7 @@ header{
         @include display_center;
         flex-direction: column;
         text-align: center;
-        padding: 15px 15px 15px 15px;
+        padding: 15px;
         background-color: whitesmoke;
         & h1{
             font-size: large;
@@ -110,15 +110,45 @@ header{
 }
 
 aside{
+    @include display_center;
+    flex-wrap: wrap;
+    width: 95%;
     & h3{
+        align-self: flex-start;
         margin-left: 15px;
+        font-size: 25px;
+        width: 100%;
     }
     & .__step{
+        display: flex;
+        justify-content: flex-start;
+        width: 30%;
+        background-color: #f7f5f5;
+        box-shadow: 5px 5px 5px lightgrey;
+        border-radius: 25px;
+        margin: 15px;
+        padding: 10px 5px 10px 5px;
+        & .fa{
+            font-size: 20px;
+            color: grey;
+            padding: 15px;
+        }
+        &:hover{
+            background-color: #f5edffff;
+            box-shadow: 5px 5px 5px #CECECE;
+            .fa{
+                color: $primary_color
+            }
+        }
+    }
+    & .__step--number{
         @include display_center;
         color: white;
         background-color: $primary_color;
-        border: 1px solid $primary_color;
-        border-radius: 50px 50px 50px 50px;
-        padding: 10px;
+        border-radius: 25px;
+        font-size: 13px;
+        padding: 4px 7px 4px 7px;
+        width: 10px;
+        margin-left: -15px;
     }
 }
