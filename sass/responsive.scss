@@ -44,8 +44,24 @@
             & .fa{
                 padding: 15px;
             }
+            .fas:active{
+                animation: heart-main 600ms ease-in-out forwards;
+            }
         }
     }
+}
+
+.button__menu:active .animation--check{
+    animation: animation_check--1 400ms linear forwards;
+}
+
+.button__menu:active .anim-container{
+    animation: animation_check--2 400ms linear backwards;
+    width: 80%;
+}
+
+.button__menu:active .fa-regular{
+    transform: rotate(360deg);
 }
 
 @media (max-width: 768px){
@@ -81,7 +97,6 @@
             display: flex;
             width: auto;
             box-shadow: 5px 5px 6px gainsboro;
-            padding: 8px;
             margin: 20px;
             border-radius: 15px;
             background-color: white;

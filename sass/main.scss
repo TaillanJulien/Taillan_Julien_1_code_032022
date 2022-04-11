@@ -37,8 +37,15 @@ $tertiary_color:#99E2D0;
     border-radius: 60px;
     padding: 0 20px 0px 20px;
     margin: 20px 0 30px 0;
+    box-shadow: 6px 6px 8px lightgray;
     a{
         color: white;
+    }
+    &:hover{
+        opacity: 0.9;
+        scale: (1.05);
+        box-shadow: 8px 8px 10px lightgray;
+        animation: zoom 300ms linear;
     }
 }
 
@@ -46,21 +53,72 @@ $tertiary_color:#99E2D0;
     display: flex;
     justify-content: space-between;
     box-shadow: 5px 5px 6px gainsboro;
-    padding: 8px;
     margin: 20px;
     border-radius: 15px;
     background-color: white;
     }
     .button__menu--title{
-        width: 80%;
+        padding: 8px 8px 0 8px;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
         & h4, p{
             font-size: 14px;
             margin: 0;
             padding: 3px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
         }
     }
     .button__menu--price p{
         margin: 32px 0 0 5px;
+        padding: 8px;
+        width: 100%;
+    }
+
+/*Keyframes*/
+
+    @keyframes spin{
+        from{ transform: rotate(0deg); }
+        to{ transform: rotate(360deg); }
+    }
+    
+    @keyframes spin-reverse{
+        from{ transform: rotate(0deg); }
+        to{ transform: rotate(-360deg);}
+    }
+    
+    @keyframes loader{
+        0%{ opacity: 1;}
+        85%, 100%{ opacity: 0;}
+        100%{ opacity: 0; height: 0; visibility: hidden;}
+    }
+    
+    @keyframes zoom{
+        from{scale: (1);}
+        to{scale: (1.04);}
+    }
+    
+    @keyframes heart-main{
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+    
+    @keyframes animation_check--1 {
+        0%{opacity: 0; width: 0%;}
+        100%{opacity: 1; width: 20%;}
+    }
+    
+    @keyframes animation_check--2 {
+        0%{width: 100%;}
+        100%{width: 80%;}
+    }
+    
+    @keyframes anim-button{
+        0%{ opacity: 0;}
+        100%{ opacity: 1;}
     }
 
 /*body*/
@@ -189,9 +247,13 @@ aside{
     & .__cards{
         width: 40%;
         height: 270px;
-        border-radius: 20px 20px 20px 20px;
+        border-radius: 20px;
         box-shadow: 2px 2px 6px lightgrey;
         margin: 30px;
+        position: relative;
+        &:hover{
+            animation: zoom 500ms ease-out forwards;
+        }
     }
     & .__cards--img{
         height: 75%;
@@ -219,12 +281,31 @@ aside{
             @include display_center;
             justify-content: flex-end;
             width: 40%;
-            font-size: 20px;
-            & .fa{
+            font-size: 25px;
+            & .fa-regular{
                 padding: 15px;
+                position: absolute;
+            }
+            .fas{
+                position: relative;
+                right: 15px;
+                opacity: 0;
+                color: $primary_color
+            }
+            .fas:hover{
+                animation: heart-main 600ms ease-in-out forwards;
             }
     
         }
+}
+
+.new{
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $tertiary_color;
+    color: #01664c;
+    right: 1em;
 }
 
 footer{
@@ -267,7 +348,7 @@ footer{
 .main{
     display: flex;
     flex-wrap: wrap;
-    background-color: whitesmoke;
+    background-color: whitesmoke;   
     & h3{
         margin: 15px
     }
@@ -281,11 +362,11 @@ footer{
     font-size: small;
     margin-top: -3rem;
     padding: 15px 0 0 0;
-    border-radius: 20px 20px 0 0;
+    border-radius: 35px 35px 0 0;
     width: 100%;
     & .fa{
         align-self: center;
-        font-size: large;
+        font-size: x-large;
         padding: 20px;
     }
     & h1{
@@ -300,6 +381,8 @@ footer{
 
 .button__menu{
     @include button-menu;
+    position: relative;
+    overflow: hidden;
 }
 
 .third{
@@ -316,9 +399,25 @@ footer{
     }
 }
 
-
 span{
     border-bottom: 3px solid $tertiary_color;
+}
+
+/* Animations apparition boutons*/
+
+.anim-button--1{
+    animation: anim-button 700ms linear backwards;
+    animation-delay: 300ms;
+}
+
+.anim-button--2{
+    animation: anim-button 700ms linear backwards;
+    animation-delay: 700ms;
+}
+
+.anim-button--3{
+    animation: anim-button 700ms linear backwards;
+    animation-delay: 1300ms;
 }
 
 .button{
@@ -328,5 +427,144 @@ span{
     width: 150px ;
     margin: 50px auto 60px auto;
 }
+
+/* Animation check boutons*/
+
+.animation--check{
+    @include display_center;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: $tertiary_color;
+    opacity: 0;
+    & .fa-regular{
+        color: white;
+        font-size: xx-large;
+    }
+}
+
+.anim-container{
+    display: flex;
+    width: 100%;
+}
+
+.button__menu:hover .animation--check{
+    animation: animation_check--1 400ms linear forwards;
+}
+
+.button__menu:hover .anim-container{
+    animation: animation_check--2 400ms linear backwards;
+    width: 80%;
+}
+
+.button__menu .fa-regular{
+    transform: rotate(0deg);
+    transition: transform 600ms ease-out;
+}
+.button__menu:hover .fa-regular{
+    transform: rotate(360deg);
+}
+
+/*Loader*/
+
+@mixin anim-loader {
+    position: absolute;
+    border: 5px solid transparent;
+}
+
+@mixin loader-primary-color {
+    border-top-color: $primary_color;
+    border-bottom-color: $primary_color;
+}
+
+@mixin loader-secondary-color {
+    border-top-color: $secondary_color;
+    border-bottom-color: $secondary_color;
+}
+
+@mixin loader-tertiary-color{
+    border-top-color: $tertiary_color;
+    border-bottom-color: $tertiary_color;
+}
+
+.loader{
+    height: 100vh;
+    width: 100%;
+    @include display_center;
+    background-color: white;
+    animation: loader 4s forwards ease-in-out;
+    animation-delay: 1s;
+}
+
+.loader-double{
+    @include anim-loader;
+    @include loader-primary-color;
+    border-radius: 50px;
+    animation: spin 3s linear infinite;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.loader-double::after{
+    content: '';
+    @include anim-loader;
+    @include loader-secondary-color;
+    top: 8px;
+    left: 8px;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 50px;
+    animation: spin 3s linear infinite;
+}
+
+.loader-double::before{
+    content: '';
+    @include anim-loader;
+    @include loader-tertiary-color;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+    border-radius: 50px;
+    animation: spin-reverse 1s linear infinite;
+}
+
+.loader-double--2{
+    @include anim-loader;
+    @include loader-primary-color;
+    border-radius: 600%;
+    animation: spin-reverse 3s linear infinite;
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+.loader-double--2::after{
+    content: '';
+    @include anim-loader;
+    @include loader-secondary-color;
+    top: 8px;
+    left: 8px;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 600%;
+    animation: spin-reverse 3s linear infinite;
+}
+
+.loader-double--2::before{
+    content: '';
+    @include anim-loader;
+    @include loader-tertiary-color;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+    border-radius: 600%;
+    animation: spin 1s linear infinite;
+}
+ 
 
 
