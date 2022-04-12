@@ -38,14 +38,15 @@ $tertiary_color:#99E2D0;
     padding: 0 20px 0px 20px;
     margin: 20px 0 30px 0;
     box-shadow: 6px 6px 8px lightgray;
+    transform: scale(1);
+    transition: transform 900ms;
     a{
         color: white;
     }
     &:hover{
         opacity: 0.9;
-        scale: (1.05);
         box-shadow: 8px 8px 10px lightgray;
-        animation: zoom 300ms linear;
+        transform: scale(1.10);
     }
 }
 
@@ -94,11 +95,6 @@ $tertiary_color:#99E2D0;
         0%{ opacity: 1;}
         85%, 100%{ opacity: 0;}
         100%{ opacity: 0; height: 0; visibility: hidden;}
-    }
-    
-    @keyframes zoom{
-        from{scale: (1);}
-        to{scale: (1.04);}
     }
     
     @keyframes heart-main{
@@ -251,8 +247,10 @@ aside{
         box-shadow: 2px 2px 6px lightgrey;
         margin: 30px;
         position: relative;
+        transform: scale(1);
+        transition: transform 700ms;    
         &:hover{
-            animation: zoom 500ms ease-out forwards;
+            transform: scale(1.10)
         }
     }
     & .__cards--img{
@@ -272,7 +270,8 @@ aside{
     }
         .__cards--description{
                 width: 50%;
-                padding: 10px 15px 15px 15px ;
+                padding: 10px 15px 15px 15px;
+                color: black;
             & h4, & p{
                 margin: 0 0 5px 0;
         }
@@ -285,6 +284,7 @@ aside{
             & .fa-regular{
                 padding: 15px;
                 position: absolute;
+                color: black;
             }
             .fas{
                 position: relative;
@@ -496,6 +496,7 @@ span{
     background-color: white;
     animation: loader 4s forwards ease-in-out;
     animation-delay: 1s;
+    border-bottom: none;
 }
 
 .loader-double{

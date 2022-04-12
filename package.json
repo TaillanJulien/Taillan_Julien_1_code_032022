@@ -6,7 +6,7 @@
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./css/style.css --style expanded",
     "sass": "sass --watch ./sass/responsive.scss:./css/responsive.css --style expanded",
-    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/"
   },
   "repository": {
     "type": "git",
