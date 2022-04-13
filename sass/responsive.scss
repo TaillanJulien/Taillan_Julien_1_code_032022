@@ -21,6 +21,11 @@
             width: 85%;
         }
     }
+
+    .title__icon .fas:active{
+        animation: heart-main 600ms ease-in-out forwards;
+    }
+
     .restaurant{
         flex-direction: column;
         & .__cards{
@@ -39,7 +44,6 @@
     }
         .__cards--icone{
             justify-content: flex-end;
-            width: 40%;
             font-size: 20px;
             & .fa{
                 padding: 15px;

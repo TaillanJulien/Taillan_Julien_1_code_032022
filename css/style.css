@@ -1,8 +1,8 @@
 /* Polices */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-Bold-webfont.eot");
-  src: url("./fonts/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/Roboto-Bold-webfont.woff") format("woff"), url("./fonts/Roboto-Bold-webfont.ttf") format("truetype"), url("./fonts/Roboto-Bold-webfont.svg#robotoregular") format("svg");
+  src: url("./fonts/Roboto-Regular.ttf");
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -257,6 +257,9 @@ aside .__step--number {
 .restaurant .__cards:hover {
   transform: scale(1.1);
 }
+.restaurant .__cards a {
+  width: 100%;
+}
 .restaurant .__cards--img {
   height: 75%;
   border-radius: 15px 15px 0px 0px;
@@ -273,7 +276,7 @@ aside .__step--number {
   height: 25%;
 }
 .restaurant .__cards--description {
-  width: 50%;
+  width: 80%;
   padding: 10px 15px 15px 15px;
   color: black;
 }
@@ -313,7 +316,7 @@ aside .__step--number {
 }
 
 footer {
-  background-color: dimgray;
+  background-color: #353535;
   color: white;
   padding: 15px;
 }
@@ -359,7 +362,6 @@ footer a {
 
 .title__menu {
   display: flex;
-  justify-content: space-between;
   background-color: whitesmoke;
   font-family: "shrikhand";
   font-size: small;
@@ -368,13 +370,27 @@ footer a {
   border-radius: 35px 35px 0 0;
   width: 100%;
 }
-.title__menu .fa {
-  align-self: center;
-  font-size: x-large;
-  padding: 20px;
-}
 .title__menu h1 {
-  padding-left: 15px;
+  width: 95%;
+  padding-left: 10px;
+}
+.title__menu .title__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  font-size: x-large;
+  padding: 5px 20px 15px 15px;
+}
+.title__menu .title__icon .fa-regular {
+  position: absolute;
+}
+.title__menu .title__icon .fas {
+  opacity: 0;
+  color: #9356DC;
+}
+.title__menu .title__icon .fas:hover {
+  animation: heart-main 600ms ease-in-out forwards;
 }
 
 .first, .second {
