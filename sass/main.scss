@@ -18,6 +18,9 @@
 $primary_color:#9356DC;
 $secondary_color:#FF79DA;
 $tertiary_color:#99E2D0;
+$primary_background_color: #353535;
+$secondary_background_color: whitesmoke;
+
 
 /* Mixin */
 
@@ -33,7 +36,6 @@ $tertiary_color:#99E2D0;
     background: linear-gradient(to bottom right, $secondary_color, $primary_color);
     border-radius: 60px;
     padding: 0 20px 0px 20px;
-    margin: 20px 0 30px 0;
     box-shadow: 6px 6px 8px lightgray;
     transform: scale(1);
     transition: transform 900ms;
@@ -168,7 +170,7 @@ header{
         flex-direction: column;
         text-align: center;
         padding: 15px;
-        background-color: whitesmoke;
+        background-color: $secondary_background_color;
         & h1{
             font-size: large;
         }
@@ -177,10 +179,13 @@ header{
             font-size: medium;
             color: dimgray;
         }
+        & .__button{
+            margin-bottom: 30px
+        }
     }
 }
 
-aside{
+.function{
     @include display_center;
     flex-wrap: wrap;
     width: 90%;
@@ -307,7 +312,7 @@ aside{
 }
 
 footer{
-    background-color: #353535;
+    background-color: $primary_background_color;
     color: white;
     padding: 15px;
     & > p{
@@ -346,7 +351,7 @@ footer{
 .main{
     display: flex;
     flex-wrap: wrap;
-    background-color: whitesmoke;   
+    background-color: $secondary_background_color;   
     & h3{
         margin: 15px
     }
@@ -354,7 +359,7 @@ footer{
 
 .title__menu{
     display: flex;  
-    background-color: whitesmoke;
+    background-color: $secondary_background_color;
     font-family: 'shrikhand';
     font-size: small;
     margin-top: -3rem;
@@ -384,7 +389,6 @@ footer{
 }
 
 .first, .second{
-    margin: 20px 0 20px 0;
     width: 50%;
 }
 
@@ -434,7 +438,7 @@ span{
     align-self: center;
     height: 50px;
     width: 150px ;
-    margin: 50px auto 60px auto;
+    margin: 40px auto 70px auto;
 }
 
 /* Animation check boutons*/

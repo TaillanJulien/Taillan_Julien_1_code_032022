@@ -11,10 +11,10 @@
     font-size: 1.2em;
   }
 
-  aside {
+  .function {
     flex-direction: column;
   }
-  aside .__step {
+  .function .__step {
     width: 85%;
   }
 

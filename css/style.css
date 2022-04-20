@@ -116,7 +116,6 @@ body .__button {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 60px;
   padding: 0 20px 0px 20px;
-  margin: 20px 0 30px 0;
   box-shadow: 6px 6px 8px lightgray;
   transform: scale(1);
   transition: transform 900ms;
@@ -180,8 +179,11 @@ header .__back {
   font-size: medium;
   color: dimgray;
 }
+.top-section .__description .__button {
+  margin-bottom: 30px;
+}
 
-aside {
+.function {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,12 +191,12 @@ aside {
   width: 90%;
   padding: 35px 0 35px 30px;
 }
-aside h3 {
+.function h3 {
   align-self: flex-start;
   font-size: 25px;
   width: 90%;
 }
-aside .__step {
+.function .__step {
   display: flex;
   justify-content: flex-start;
   width: 30%;
@@ -204,19 +206,19 @@ aside .__step {
   margin: 15px;
   padding: 10px 5px 10px 5px;
 }
-aside .__step .fa {
+.function .__step .fa {
   font-size: 20px;
   color: grey;
   padding: 15px;
 }
-aside .__step:hover {
+.function .__step:hover {
   background-color: #f5edffff;
   box-shadow: 5px 5px 5px #CECECE;
 }
-aside .__step:hover .fa {
+.function .__step:hover .fa {
   color: #9356DC;
 }
-aside .__step--number {
+.function .__step--number {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -394,7 +396,6 @@ footer a {
 }
 
 .first, .second {
-  margin: 20px 0 20px 0;
   width: 50%;
 }
 
@@ -454,14 +455,13 @@ span {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 60px;
   padding: 0 20px 0px 20px;
-  margin: 20px 0 30px 0;
   box-shadow: 6px 6px 8px lightgray;
   transform: scale(1);
   transition: transform 900ms;
   align-self: center;
   height: 50px;
   width: 150px;
-  margin: 50px auto 60px auto;
+  margin: 40px auto 70px auto;
 }
 .button a {
   color: white;
